@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamDash.Views.AddPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Insert Coin - e.g. BTC (For Bitcoin)" />
+            <Entry x:Name="ChosenCoin" Text="Coin shortname" />
+            <Label Text="Enter amount of coins" />
+            <Entry x:Name="AmountOfCoin" Text="Amount" />
+            <Button Text="Add Coin" Clicked="Button_Clicked" />
+
+            <RelativeLayout>
+                <Label Text="Coin Name"            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=0}"
+                                                   RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0, Constant=0}"/>
+
+                <Label Text="Amount"               RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1, Constant=-250}"
+                                                   RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0, Constant=0}"/>
+
+
+                <ListView x:Name="AddedCoinsList"  RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=0}"
+                                                   RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0, Constant=30}">
+                </ListView>
+                <ListView x:Name="AddedAmountList" RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1, Constant=-250}"
+                                                   RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0, Constant=30}">
+                </ListView>
+            </RelativeLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

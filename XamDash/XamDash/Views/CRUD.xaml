@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamDash.Views.CRUD">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <StackLayout HorizontalOptions="FillAndExpand" BackgroundColor="#2196F3" HeightRequest="50">
+                <Label Text="{Binding CoinK.CoinName}" VerticalOptions="CenterAndExpand" FontSize="Large" HorizontalOptions="CenterAndExpand" TextColor="White"></Label>
+            </StackLayout>
+
+            <StackLayout HorizontalOptions="FillAndExpand" BackgroundColor="#2196F3" HeightRequest="75" Padding="10">
+                <Label Text="Coin Amount:" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" TextColor="White"/>
+                <Entry Text="{Binding CoinK.CoinAmount}" BackgroundColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+            <StackLayout HorizontalOptions="FillAndExpand" BackgroundColor="#2196F3" HeightRequest="75" Padding="10">
+                <Label Text="Coin Bought To:" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" TextColor="White"/>
+                <Entry Text="{Binding CoinK.CoinBoughtTo}" BackgroundColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+
+            <RelativeLayout Padding="20">
+                <Button Clicked="Button_Clicked" Text="Update" RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=0}"
+                                      RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0, Constant=0}"/>
+                
+                <Button Text="Delete" RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=75}"
+                                      RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0, Constant=0}"/>
+
+            </RelativeLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

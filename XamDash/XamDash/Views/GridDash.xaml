@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:a="clr-namespace:Xamarin.Forms.Alias;assembly=Xamarin.Forms.Alias"
+             x:Class="XamDash.Views.GridDash">
+    <ContentPage.Content >
+
+        <StackLayout Padding="10">
+            <Label x:Name="ResponseTekst" />
+
+            <StackLayout HeightRequest="75" BackgroundColor="Black">
+                <Label x:Name="TotalAmountinDKK" Text="Total DKK:" FontAttributes="Bold" FontSize="Medium" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
+                <Label x:Name="TotalOutcomeinDKK" Text="Total DKK:" FontAttributes="Bold" FontSize="Medium" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
+
+            </StackLayout >
+
+
+
+            <RelativeLayout BackgroundColor="LightGray" Margin="10" HeightRequest="50">
+            <Label Text="Coin" FontSize="18" FontAttributes="Bold" TextColor="Black"        RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=35}"
+                                                                                            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0, Constant=12}" />
+            
+            <Label Text="Mine Penge" FontSize="18" FontAttributes="Bold" TextColor="Black"  RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=350}"
+                                                                                            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0, Constant=12}" />
+            
+            <Label Text="Købt Til" FontSize="18" FontAttributes="Bold" TextColor="Black"    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=140}"
+                                                                                            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0, Constant=12}" />
+
+            <Label Text="Overskud" FontSize="18" FontAttributes="Bold" TextColor="Black"    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=245}"
+                                                                                            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0, Constant=12}" />
+
+            </RelativeLayout>
+
+            <ListView x:Name="MyCoinList" HasUnevenRows="True"
+                      ItemTapped="MyItemTapped">                
+                <ListView.ItemTemplate >
+                    <DataTemplate >
+                        <ViewCell >
+                            <RelativeLayout Margin="10">
+                                
+                                <Image Source="Btc.png" HeightRequest="30" WidthRequest="30" RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=0}"
+                                                                                            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0, Constant=8}"/>
+                                
+                                <Label Text="{Binding AmountDKK, StringFormat='DKK {0:N}'}" RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=350}"
+                                                                                            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0, Constant=5}" />
+                                
+                                <Label Text="{Binding AmountUSD, StringFormat='USD {0:N}'}" RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=350}"
+                                                                                            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0, Constant=25}" />
+                                
+                                <Label Text="{Binding CoinName}" FontAttributes="Bold"      RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=35}"
+                                                                                            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0, Constant=5}"/>
+
+                                <Label Text="{Binding USD, StringFormat='USD {0:N}'}"       RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=35}"
+                                                                                            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0, Constant=25}"/>
+                                
+                                <Label Text="{Binding CoinBoughtTo, StringFormat='USD {0:N}'}"       RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=140}"
+                                                                                                     RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0, Constant=25}"/>
+                                
+                                <Label Text="{Binding CoinOutcomeDKK, StringFormat='DKK {0:N}'}"       RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0, Constant=245}"
+                                                                                                     RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0, Constant=25}"/>
+                               
+                            </RelativeLayout>
+                        </ViewCell>
+                    </DataTemplate>
+
+                </ListView.ItemTemplate>    
+                
+            </ListView>
+
+            
+            <Button Text="Update" Clicked="Button_Clicked"></Button>
+        </StackLayout>     
+
+
+    </ContentPage.Content>
+</ContentPage>

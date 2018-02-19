@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamDash.Views.LoginPage">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" Padding="10" Margin="10">
+            <Image Source="Btc.png" HorizontalOptions="Center" HeightRequest="50" WidthRequest="50" Margin="10" />
+            <Label  Text="Brugernavn" />
+            <Entry  x:Name="Username" FontAttributes="Bold" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+
+            <Label  Text="Kodeord"  />
+            <Entry  x:Name="Password" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+            
+            <Button Text="Login" Clicked="Button_Clicked" HorizontalOptions="FillAndExpand"></Button>
+
+            <Label x:Name="TestId" Text="NoIdYet"></Label>
+
+        </StackLayout >
+    </ContentPage.Content>
+</ContentPage>
